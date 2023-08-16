@@ -3,65 +3,317 @@ import { RestoranList } from "../component/restoranList";
 import { Menu } from "../component/Menu";
 
 const restaurants = [
-  /* Тут указана заглушка в виде захардкодженова обекта,для его обработки, 
-  такая структура будет ожилаться в виде ответа от запроса на сервер. 
-  Для получения данных с сервера можно будет использовать такой код 
-    useEffect( () => {
-      fetch("URL-сервера на который мы будем посылать GET запрос для получения данных")
-      .then((res) => res.json()) получаем ответ с сервера ввиде JSON файла и преобразовываем его в js масив
-      .then( (restaurants) =>  addresturants(restaurants))
-
-
-    },[]) Мы будем вызывать этот useEfect только при первом рендеринге что-бы установить масив который мы получим с серера
-
-  */
-
-
   {
-    name: "MCdonalds",
-    adress: "",
+    name: "McDonald's",
+    address: "123 Main Street",
     menu: [
       {
-        name: "Chees burger",
+        name: "Cheeseburger",
         price: 130,
-        img: "",
+        img: "cheeseburger.jpg",
       },
       {
-        name: "Mack chiken",
+        name: "McChicken",
         price: 90,
-        img: "",
+        img: "mcchicken.jpg",
       },
       {
-        name: "big taste",
+        name: "Big Taste",
         price: 170,
-        img: "",
+        img: "bigtaste.jpg",
       },
       {
-        name: "naggets",
+        name: "Nuggets",
         price: 50,
-        img: "",
+        img: "nuggets.jpg",
+      },
+    ],
+  },
+  {
+    name: "Burger King",
+    address: "456 Oak Avenue",
+    menu: [
+      {
+        name: "Whopper",
+        price: 150,
+        img: "whopper.jpg",
+      },
+      {
+        name: "Chicken Royale",
+        price: 120,
+        img: "chickenroyale.jpg",
+      },
+      {
+        name: "Cheesy Fries",
+        price: 80,
+        img: "cheesyfries.jpg",
+      },
+      {
+        name: "Onion Rings",
+        price: 60,
+        img: "onionrings.jpg",
       },
     ],
   },
   {
     name: "KFC",
-    adress: "",
-    menu: [],
+    address: "789 Elm Street",
+    menu: [
+      {
+        name: "Original Recipe Chicken",
+        price: 140,
+        img: "originalrecipe.jpg",
+      },
+      {
+        name: "Zinger Burger",
+        price: 110,
+        img: "zingerburger.jpg",
+      },
+      {
+        name: "Twister Wrap",
+        price: 120,
+        img: "twister.jpg",
+      },
+      {
+        name: "Popcorn Chicken",
+        price: 70,
+        img: "popcornchicken.jpg",
+      },
+    ],
   },
   {
-    name: "Burger King",
-    adress: "",
-    menu: [],
+    name: "Pizza Hut",
+    address: "101 Maple Lane",
+    menu: [
+      {
+        name: "Supreme Pizza",
+        price: 180,
+        img: "supremepizza.jpg",
+      },
+      {
+        name: "Pepperoni Lover's Pizza",
+        price: 160,
+        img: "pepperonipizza.jpg",
+      },
+      {
+        name: "Veggie Delight Pizza",
+        price: 150,
+        img: "veggiepizza.jpg",
+      },
+      {
+        name: "Stuffed Crust Pizza",
+        price: 200,
+        img: "stuffedcrustpizza.jpg",
+      },
+    ],
   },
   {
-    name: "Shawarma",
-    adress: "",
-    menu: [],
+    name: "Subway",
+    address: "555 Pine Street",
+    menu: [
+      {
+        name: "Italian BMT",
+        price: 120,
+        img: "italianbmt.jpg",
+      },
+      {
+        name: "Turkey & Cheese",
+        price: 100,
+        img: "turkeycheese.jpg",
+      },
+      {
+        name: "Veggie Delite",
+        price: 90,
+        img: "veggiedelite.jpg",
+      },
+      {
+        name: "Chicken Teriyaki",
+        price: 130,
+        img: "chickenteriyaki.jpg",
+      },
+    ],
   },
   {
-    name: "Duble&decker",
-    adress: "",
-    menu: [],
+    name: "Domino's Pizza",
+    address: "222 Oak Street",
+    menu: [
+      {
+        name: "ExtravaganZZa Pizza",
+        price: 170,
+        img: "extravaganzza.jpg",
+      },
+      {
+        name: "MeatZZa Pizza",
+        price: 160,
+        img: "meatzza.jpg",
+      },
+      {
+        name: "Deluxe Veggie Pizza",
+        price: 150,
+        img: "deluxeveggie.jpg",
+      },
+      {
+        name: "Chicken Bacon Ranch Pizza",
+        price: 180,
+        img: "chickenbaconranch.jpg",
+      },
+    ],
+  },
+  {
+    name: "Taco Bell",
+    address: "333 Cedar Street",
+    menu: [
+      {
+        name: "Crunchwrap Supreme",
+        price: 120,
+        img: "crunchwrapsupreme.jpg",
+      },
+      {
+        name: "Quesarito",
+        price: 110,
+        img: "quesarito.jpg",
+      },
+      {
+        name: "Doritos Locos Tacos",
+        price: 90,
+        img: "doritostacos.jpg",
+      },
+      {
+        name: "Cheesy Gordita Crunch",
+        price: 130,
+        img: "cheesygorditacrunch.jpg",
+      },
+    ],
+  },
+  {
+    name: "Wendy's",
+    address: "444 Elm Street",
+    menu: [
+      {
+        name: "Dave's Single",
+        price: 140,
+        img: "davessingle.jpg",
+      },
+      {
+        name: "Spicy Chicken Sandwich",
+        price: 120,
+        img: "spicychickensandwich.jpg",
+      },
+      {
+        name: "Baconator",
+        price: 160,
+        img: "baconator.jpg",
+      },
+      {
+        name: "Natural Cut Fries",
+        price: 70,
+        img: "fries.jpg",
+      },
+    ],
+  },
+  {
+    name: "Starbucks",
+    address: "555 Willow Avenue",
+    menu: [
+      {
+        name: "Caffè Latte",
+        price: 130,
+        img: "caffelatte.jpg",
+      },
+      {
+        name: "Caramel Macchiato",
+        price: 150,
+        img: "caramelmacchiato.jpg",
+      },
+      {
+        name: "Iced Coffee",
+        price: 110,
+        img: "icedcoffee.jpg",
+      },
+      {
+        name: "Chocolate Croissant",
+        price: 80,
+        img: "chocolatecroissant.jpg",
+      },
+    ],
+  },
+  {
+    name: "Papa John's Pizza",
+    address: "666 Maple Avenue",
+    menu: [
+      {
+        name: "The Works Pizza",
+        price: 160,
+        img: "theworks.jpg",
+      },
+      {
+        name: "BBQ Chicken Bacon Pizza",
+        price: 150,
+        img: "bbqchickenbacon.jpg",
+      },
+      {
+        name: "Spinach Alfredo Pizza",
+        price: 140,
+        img: "spinachalfredo.jpg",
+      },
+      {
+        name: "Garden Fresh Pizza",
+        price: 130,
+        img: "gardenfresh.jpg",
+      },
+    ],
+  },
+  {
+    name: "Panera Bread",
+    address: "777 Pine Avenue",
+    menu: [
+      {
+        name: "Bacon Turkey Bravo Sandwich",
+        price: 120,
+        img: "baconturkeybravo.jpg",
+      },
+      {
+        name: "Frontega Chicken Panini",
+        price: 130,
+        img: "frontegachicken.jpg",
+      },
+      {
+        name: "Mediterranean Veggie Sandwich",
+        price: 110,
+        img: "mediterraneanveggie.jpg",
+      },
+      {
+        name: "Broccoli Cheddar Soup",
+        price: 90,
+        img: "broccolicheddar.jpg",
+      },
+    ],
+  },
+  {
+    name: "Chick-fil-A",
+    address: "888 Oak Avenue",
+    menu: [
+      {
+        name: "Original Chicken Sandwich",
+        price: 140,
+        img: "originalchicken.jpg",
+      },
+      {
+        name: "Spicy Deluxe Sandwich",
+        price: 150,
+        img: "spicydeluxe.jpg",
+      },
+      {
+        name: "Nuggets",
+        price: 120,
+        img: "nuggets.jpg",
+      },
+      {
+        name: "Waffle Fries",
+        price: 80,
+        img: "wafflefries.jpg",
+      },
+    ],
   },
 ];
 
